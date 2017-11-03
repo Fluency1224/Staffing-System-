@@ -1,0 +1,63 @@
+.
+├── client  客户端文件夹
+│   ├── add_user.c 管理员模式下 增加用户函数模块
+│   ├── add_user.o 
+│   ├── change_user_msg.c 管理员模式下 修改员工信息函数模块
+│   ├── change_user_msg.o
+│   ├── change_user_passwd.c 用户模式 修改密码函数模块
+│   ├── change_user_passwd.o
+│   ├── client 客户端 可执行文件
+│   ├── client.c 客户端入口函数 网络初始化和连接
+│   ├── client.h 客户端头文件 各函数的生命以及全局变量和宏定义
+│   ├── client.o
+│   ├── delete_user.c 管理员模式下 删除用户函数模块
+│   ├── delete_user.o
+│   ├── login.c 登录函数模块
+│   ├── login.o
+│   ├── makefile 客户端 Makefile
+│   ├── menu.c 菜单函数模块
+│   ├── menu.o
+│   ├── operate.c 客户端 命令操作函数模块
+│   ├── operate.o
+│   ├── protocol.h 总头文件与服务器对应 相同的宏和Msg结构体
+│   ├── search_user_msg.c 管理员模式下 查询员工信息
+│   ├── search_user_msg.o
+│   ├── usearch_user_msg.c 用户模式 查询员工信息
+│   └── usearch_user_msg.o
+├── README
+├── server
+│   ├── add_user.c 管理员模式下 增加用户函数模块
+│   ├── add_user.o
+│   ├── change_user_msg.c 管理员模式下 修改员工信息函数模块
+│   ├── change_user_msg.o
+│   ├── change_user_passwd.c 用户模式 修改密码函数模块
+│   ├── change_user_passwd.o
+│   ├── delete_user.c 管理员模式下 删除用户函数模块
+│   ├── delete_user.o
+│   ├── init_sqlite.c 数据库初始化 函数模块
+│   ├── init_sqlite.o
+│   ├── makefile 服务器Makefile
+│   ├── mysqlite.db 数据库文件
+│   ├── protocol.h 总头文件 与客户端对应的宏和结构体
+│   ├── search_user_msg.c 管理员模式下 查询员工信息
+│   ├── search_user_msg.o
+│   ├── server 可执行文件
+│   ├── server.c 服务器主函数 网络初始化连接 多进程
+│   ├── server.h 服务器头文件
+│   ├── server_login.c 服务器端 登录函数模块
+│   ├── server_login.o
+│   ├── server.o
+│   ├── server_operate.c 服务器操作函数
+│   ├── server_operate.o
+│   ├── usearch_user_msg.c 用户模式 查询员工信息
+│   └── usearch_user_msg.o
+├── 员工管理系统-项目前必读.doc
+└── 员工信息管理系统概要设计.doc
+
+时间没能允许 简单介绍日志文件思想：
+加入log.c 函数模块 用log.txt文件作为日志文件
+用OWDR方式open()函数打开并初始化 fd设为全局变量
+在各个处理模块中加入 write()函数向log.txt中写入no, name, type,和所处函数模块
+ log.c 中定义buf 用read()函数读出并打印。
+ 
+2 directories, 54 files
